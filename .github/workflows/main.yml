@@ -18,3 +18,5 @@ jobs:
         run: echo "nomta boro udash"
       - name: Show commit SHA
         run: echo "Current commit SHA:" ${{ github.sha }}
+      - name: Show branch SHA
+        run: echo "Current commit SHA:" ${{ github.ref }}
