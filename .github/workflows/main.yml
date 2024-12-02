@@ -1,17 +1,20 @@
 name: hello-world
-'on': push
+on:
+  push:
+
 jobs:
-  firstJob:
+  firstjob:
     runs-on: ubuntu-latest
     steps:
       - name: my-step
         run: echo "Hello prince!"
       - name: my-step2
         run: echo "ghumaw prince!"
+
   secondJob:
     runs-on: ubuntu-latest
     steps:
       - name: valo lage na
         run: echo "nomta boro udash"
       - name: Show commit SHA
-        run: echo "Current commit SHA: ${{ github.sha }}"
+        run: echo "Current commit SHA:" ${{ github.workflow }}
