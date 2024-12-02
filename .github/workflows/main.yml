@@ -1,13 +1,15 @@
 name: hello-world
 'on': push
 jobs:
-  my-job:
+  firstjob:
     runs-on: ubuntu-latest
     steps:
       - name: my-step
         run: echo "Hello prince!"
+      - name: my-step2
+        run: echo "ghumaw prince!"
   scondJob:
     runs-on: ubuntu-latest
     steps:
-      - name: my-step2
-        run: echo "Hello prince again!"
+      - name: valo lage na
+        run: echo "nomta boro udash"
