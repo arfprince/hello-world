@@ -4,7 +4,7 @@ on:
 
 jobs:
   firstjob:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: my-step
         run: echo "Hello prince!"
