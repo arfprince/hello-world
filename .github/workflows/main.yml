@@ -19,4 +19,4 @@ jobs:
         description: "An input"
         required: true
     steps:
-      - run: echo "Input Value: ${{ inputs.myInput }}"
+      - run: echo "Input Value:" ${{ inputs.myInput }}
