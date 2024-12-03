@@ -1,12 +1,7 @@
 name: hello-world
 on:
   push:
-  workflow_dispatch:
-    inputs:
-      myInput:
-        description: "An input"
-        required: true
-
+  
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -16,8 +11,12 @@ jobs:
     steps:
       - name: Print Node Version
         run: echo "Testing Node.js ${{ matrix.node }}"
-
-  use-input:
+  
+  inputs-job:
     runs-on: ubuntu-latest
+    inputs:
+      myInput:
+        description: "An input"
+        required: true
     steps:
       - run: echo "Input Value: ${{ inputs.myInput }}"
