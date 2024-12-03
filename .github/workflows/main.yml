@@ -3,19 +3,11 @@ on:
   push:
 
 jobs:
-  firstjob:
-    runs-on: self-hosted
-    steps:
-      - id: step1
-        run: echo "::set-output name=message::Hello from Step 1"
-      - name: Use Step Output
-        run: echo "${{ steps.step1.outputs.message }}"
-  secondJob:
+  test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [12, 14, 16]
     steps:
-      - name: valo lage na
-        run: echo "nomta boro udash"
-      - name: Show commit SHA
-        run: echo "Current commit SHA:" ${{ github.sha }}
-      - name: Show branch SHA
-        run: echo "Current commit SHA:" ${{ github.ref }}
+      - name: Print Node Version
+        run: echo "Testing Node.js ${{ matrix.node }}"
