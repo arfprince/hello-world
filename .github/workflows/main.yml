@@ -1,6 +1,10 @@
 name: hello-world
 on:
-  push:
+  workflow_dispatch:
+    inputs:
+      myInput:
+        description: "An input"
+        required: true
 
 jobs:
   test:
@@ -11,3 +15,7 @@ jobs:
     steps:
       - name: Print Node Version
         run: echo "Testing Node.js ${{ matrix.node }}"
+      - name: Print Input Value
+        run: echo "Input Value: ${{ github.event.inputs.myInput }}"
+
+
