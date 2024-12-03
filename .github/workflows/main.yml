@@ -6,10 +6,6 @@ jobs:
   firstjob:
     runs-on: self-hosted
     steps:
-      - name: my-step
-        run: echo "Hello prince!"
-      - name: my-step2
-        run: echo "ghumaw prince!"
       - id: step1
         run: echo "::set-output name=message::Hello from Step 1"
       - name: Use Step Output
