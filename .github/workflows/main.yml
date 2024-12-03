@@ -10,7 +10,10 @@ jobs:
         run: echo "Hello prince!"
       - name: my-step2
         run: echo "ghumaw prince!"
-
+      - id: step1
+        run: echo "::set-output name=message::Hello from Step 1"
+      - name: Use Step Output
+        run: echo "${{ steps.step1.outputs.message }}"
   secondJob:
     runs-on: ubuntu-latest
     steps:
